@@ -4,6 +4,7 @@ build/
 
 # IDE files
 .idea/
+.idea/workspace.xml
 *.iml
 *.iws
 *.ipr
