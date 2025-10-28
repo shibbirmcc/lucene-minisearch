@@ -28,6 +28,6 @@ public class AppConfig {
 
 
     public Server getServer() {
-        return root.server();
+        return root == null ? null : root.getServer();
     }
 }

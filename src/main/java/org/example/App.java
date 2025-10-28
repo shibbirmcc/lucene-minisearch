@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.config.AppConfig;
+import org.example.config.Server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,9 +14,10 @@ public class App {
 
     public static void main(String[] args) {
         try{
-            AppConfig config = new AppConfig();
-            logger.info("Configurations loaded: port={}, message={}", config.getServer().port(), config.getServer().message());
             logger.info(new App().getGreeting());
+            AppConfig config = new AppConfig();
+            Server server = config.getServer();
+            logger.info("Configurations loaded: port={}, message={}", server.getPort(), server.getMessage());
         }catch (Exception e){
             logger.error(e.getMessage());
         }
