@@ -15,7 +15,19 @@ jar {
 }
 
 dependencies {
+    implementation libs.netty.transport
+    implementation libs.netty.buffer
+    implementation libs.netty.codec.http
+    implementation libs.netty.handler
+    implementation libs.jackson.core
+    implementation libs.slf4j.api
+    implementation libs.logback.classic
+    implementation libs.snakeyaml
+
+
     testImplementation libs.junit.jupiter
+    testImplementation libs.assertj.core
+    testRuntimeOnly libs.logback.classic
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
