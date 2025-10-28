@@ -1,5 +1,34 @@
-# Ignore Gradle project-specific cache directory
-.gradle
+# Gradle build files
+.gradle/
+build/
 
-# Ignore Gradle build output directory
-build
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+*.classpath
+*.project
+.settings/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+
+# Java class files and packaging
+*.class
+*.jar
+*.war
+*.ear
+
+# Other miscellaneous
+out/
+
+# Ignore all dotfiles except Git necessary files
+.*
+!.gitignore
+!.gitattributes
+!.gitmodules
