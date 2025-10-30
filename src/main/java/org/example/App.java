@@ -18,7 +18,7 @@ public class App {
             logger.info(new App().getGreeting());
             AppConfig config = new AppConfig();
             Server server = config.getServer();
-            logger.info("Configurations loaded: port={}, message={}", server.getPort(), server.getMessage());
+            logger.info("Configurations loaded: port={}, message={}", server.getAppPort(), server.getMetricPort());
             Lucene lucene = config.getLucene();
             logger.info("Configurations loaded: lucene-data-store={}", lucene.getDataStore());
         }catch (Exception e){

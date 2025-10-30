@@ -1,3 +1,2 @@
 server:
-  port: not-a-number
-  message: "break me"
+  app-port: not-a-number

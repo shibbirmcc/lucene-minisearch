@@ -12,8 +12,8 @@ class AppConfigTest {
     void loadsYamlIntoPojo() throws IOException, YAMLException {
         AppConfig cfg = new AppConfig();
         assertThat(cfg.getServer()).isNotNull();
-        assertThat(cfg.getServer().getPort()).isEqualTo(9090);
-        assertThat(cfg.getServer().getMessage()).isEqualTo("Hello from tests");
+        assertThat(cfg.getServer().getAppPort()).isEqualTo(9090);
+        assertThat(cfg.getServer().getMetricPort()).isEqualTo(9292);
         assertThat(cfg.getLucene()).isNotNull();
         assertThat(cfg.getLucene().getDataStore()).isEqualTo("/sample-lucene-data");
     }

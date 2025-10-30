@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 public class Server {
     @NonNull
-    private Integer port;
+    private Integer appPort;
     @NonNull
-    private String message;
+    private Integer metricPort;
 }

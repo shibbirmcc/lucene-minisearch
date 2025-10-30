@@ -1,5 +1,5 @@
 server:
-  port: 9090
-  message: "Hello from tests"
+  app-port: 9090
+  metric-port: 9292
 lucene:
   data-store: "/sample-lucene-data"

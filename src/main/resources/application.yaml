@@ -1,5 +1,5 @@
 server:
-  port: 8080
-  message: "Hello from YAML"
+  app-port: 8080
+  metric-port: 9090
 lucene:
   data-store: "/lucene-data"
