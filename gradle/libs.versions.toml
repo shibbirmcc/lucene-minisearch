@@ -5,6 +5,7 @@ slf4j = "2.0.7"
 logback= "1.5.20"
 snakeyaml = "2.5"
 lombok = "1.18.42"
+lucene = "10.3.1"
 junit-jupiter = "6.0.0"
 assertj = "3.27.6"
 
@@ -18,6 +19,9 @@ slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 snakeyaml = { module = "org.yaml:snakeyaml", version.ref = "snakeyaml" }
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+lucene-core = { module = "org.apache.lucene:lucene-core", version.ref = "lucene" }
+lucene-analysis-common = { module = "org.apache.lucene:lucene-analysis-common", version.ref = "lucene" }
+lucene-query-parser = { module = "org.apache.lucene:lucene-queryparser", version.ref = "lucene" }
 
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj" }

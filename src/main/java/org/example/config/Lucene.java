@@ -6,14 +6,12 @@ import lombok.NonNull;
 import lombok.Setter;
 
 /**
- * Configuration properties for server settings.
+ * Configuration properties for Lucene indexing and searching.
  */
 @NoArgsConstructor
 @Getter
 @Setter
-public class Server {
+public class Lucene {
     @NonNull
-    private Integer port;
-    @NonNull
-    private String message;
+    private String dataStore;
 }

@@ -1,3 +1,5 @@
 server:
   port: 9090
   message: "Hello from tests"
+lucene:
+  data-store: "/sample-lucene-data"

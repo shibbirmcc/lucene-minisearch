@@ -14,6 +14,8 @@ class AppConfigTest {
         assertThat(cfg.getServer()).isNotNull();
         assertThat(cfg.getServer().getPort()).isEqualTo(9090);
         assertThat(cfg.getServer().getMessage()).isEqualTo("Hello from tests");
+        assertThat(cfg.getLucene()).isNotNull();
+        assertThat(cfg.getLucene().getDataStore()).isEqualTo("/sample-lucene-data");
     }
 
     @Test
