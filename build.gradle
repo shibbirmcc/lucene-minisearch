@@ -1,6 +1,7 @@
 plugins {
     id 'application'
     id 'java'
+    id 'jacoco'
 }
 
 repositories {
@@ -8,11 +9,6 @@ repositories {
 }
 
 java { toolchain { languageVersion = JavaLanguageVersion.of(25) } }
-
-jar {
-    archiveBaseName = application_name
-    archiveVersion = application_version
-}
 
 dependencies {
     implementation libs.netty.transport
@@ -39,6 +35,33 @@ application {
     mainClass = 'org.example.App'
 }
 
+jar {
+    archiveBaseName = application_name
+    archiveVersion = application_version
+    manifest {
+        attributes(
+            'Main-Class': 'org.example.App'
+        )
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacoco {
+    toolVersion = "0.8.12"
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
 }

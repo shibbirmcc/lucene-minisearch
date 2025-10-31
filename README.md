@@ -1,5 +1,11 @@
 # Lucene MiniSearch
 
+[![CI/CD Pipeline](https://github.com/shibbirmcc/lucene-minisearch/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/shibbirmcc/lucene-minisearch/actions/workflows/ci-cd.yml)
+[![codecov](https://codecov.io/gh/shibbirmcc/lucene-minisearch/branch/master/graph/badge.svg)](https://codecov.io/gh/shibbirmcc/lucene-minisearch)
+[![Docker Image](https://img.shields.io/docker/v/shibbirmcc/lucene-minisearch?label=docker&logo=docker)](https://hub.docker.com/r/shibbirmcc/lucene-minisearch)
+[![Docker Pulls](https://img.shields.io/docker/pulls/shibbirmcc/lucene-minisearch)](https://hub.docker.com/r/shibbirmcc/lucene-minisearch)
+[![Java Version](https://img.shields.io/badge/Java-25-orange?logo=openjdk)](https://openjdk.org/)
+
 A high-performance, lightweight HTTP server built on Netty for Lucene-based Index and Search functionality.
 
 ## Overview
@@ -58,6 +64,54 @@ curl http://localhost:8080/health
 
 # Metrics server
 curl http://localhost:9090/health
+```
+
+### Docker
+
+#### Pull and Run
+
+```bash
+# Pull the latest image
+docker pull shibbirmcc/lucene-minisearch:latest
+
+# Run the container
+docker run -d \
+  -p 8080:8080 \
+  -p 9090:9090 \
+  --name lucene-minisearch \
+  shibbirmcc/lucene-minisearch:latest
+```
+
+#### Build Locally
+
+```bash
+# Build the Docker image
+docker build -t lucene-minisearch .
+
+# Run the container
+docker run -d \
+  -p 8080:8080 \
+  -p 9090:9090 \
+  --name lucene-minisearch \
+  lucene-minisearch
+```
+
+#### Docker Compose
+
+```yaml
+version: '3.8'
+services:
+  lucene-minisearch:
+    image: shibbirmcc/lucene-minisearch:latest
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9090/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
 ```
 
 ## Configuration

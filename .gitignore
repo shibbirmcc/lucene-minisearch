@@ -33,3 +33,5 @@ out/
 !.gitignore
 !.gitattributes
 !.gitmodules
+!.dockerignore
+!.github
