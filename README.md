@@ -1,6 +1,6 @@
 # Lucene MiniSearch
 
-A high-performance, lightweight HTTP server built on Netty for Lucene-based search functionality.
+A high-performance, lightweight HTTP server built on Netty for Lucene-based Index and Search functionality.
 
 ## Overview
 
@@ -124,8 +124,3 @@ curl http://localhost:8080/health
 - **Zero-copy**: Direct buffer usage for minimal memory overhead
 - **Lightweight**: Small memory footprint suitable for containerized deployments
 - **Fast startup**: Server initialization in under 500ms
-
-
-## License
-
-Apache License 2.0
